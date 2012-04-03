@@ -88,3 +88,15 @@ If you use chrome and check the console you can inspect the objects and see the 
      __proto__: Object
 
 Both className's are different but if we don't change the 'className' in the CustomView Class then they would appear as 'View'.
+
+#Calling Super
+If you override a Class and you want to call the super Class you can use the super_ method. Provide the Object and the method name.
+
+    var CustomView = function()
+    Class.extend(this, DisplayObect);
+    this.build = function() {
+		Class.super_(this, "build");
+	}
+	Class.init(this);
+    }
+
