@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>index</title>
+		<meta name="author" content="Fahim" />
+		<script type="text/javascript" src="lib/com/oop/JSInterface.js"></script>
+		<!-- Date: 2012-08-28 -->
+		<script type="text/javascript">
+		/*
+		 * create an Interface
+		 */
+			Interface.IView = {
+				show : function() {
+				},
+				hide : function() {
+				},
+				name : ""
+			}
+			/*
+			 * create a Class
+			 */
+			var View = function() {
+				Class.implement(this, Interface.IView);
+				View.prototype.className = "View";
+				this.name = "hello";
+				this.show=function()
+				{
+					console.log("base show");
+				}
+				Class.init(this);
+			}
+			/*
+			 * create an extended Class calling super
+			 */
+			var CustomView = function() {
+				Class.extend(this, View);
+				this.className = "CustomView";
+				this.show=function()
+				{
+					console.log("custom show");
+					Class._super(this,"show");
+				}
+				Class.init(this);
+			}
+			/*
+			 *  create an instance of the extended class
+			 */
+			var custom = new CustomView()
+			/*
+			 * call the custom function
+			 */
+			custom.show();
+
+		</script>
+	</head>
+	<body></body>
+</html>

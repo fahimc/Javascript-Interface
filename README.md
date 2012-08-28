@@ -95,7 +95,7 @@ If you override a Class and you want to call the super Class you can use the sup
     var CustomView = function()
     Class.extend(this, DisplayObect);
     this.build = function() {
-		Class.super_(this, "build");
+		Class._super(this, "build");
 	}
 	Class.init(this);
     }
